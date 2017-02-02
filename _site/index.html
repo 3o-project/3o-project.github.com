@@ -58,12 +58,15 @@
         <div id="map">
         </div>
 
-        <div id="cafe-detail">
-          <h2 id="cafe-name"></h2>
-          <p id='cafe-address'></p>
-          <p id='cafe-time'></p>
-          <div id='cafe-images'>
-          </div>
+        <br>
+        <div style="border-top:0.5px solid #999;">
+        </div>
+        <div id="cafe-detail" style="padding: 0 20px;">
+          <h2 id="cafe-name">
+          </h2>
+          <h4 id='cafe-address'></h4>
+          <p id='cafe-time' style="color: #999;"></p>
+          <p id='cafe-desc' style="color:#222; font-weight:600; font-size:20px;"></p>
         </div>
 
         <script>
@@ -76,11 +79,14 @@
           map.addMarker({
             lat: 37.552303,
             lng: 126.914000,
+            infoWindow: {
+              content: '<p>빌리프 커피 로스터즈</p>'
+            },
             click: function(e) {
               $("#cafe-name").text(data.belief.name);
               $("#cafe-address").text(data.belief.address);
               $("#cafe-time").text(data.belief.time);
-              $("#cafe-images").add("<img src=>");
+              $("#cafe-desc").text(data.belief.description);
             }
           });
 
@@ -89,6 +95,12 @@
             lng: 126.914429,
             infoWindow: {
               content: '<p>비포그레이</p>'
+            },
+            click: function(e) {
+              $("#cafe-name").text(data.gray.name);
+              $("#cafe-address").text(data.gray.address);
+              $("#cafe-time").text(data.gray.time);
+              $("#cafe-desc").text(data.gray.description);
             }
           });
 
@@ -97,6 +109,12 @@
             lng: 126.921616,
             infoWindow: {
               content: '<p>이리카페</p>'
+            },
+            click: function(e) {
+              $("#cafe-name").text(data.yri.name);
+              $("#cafe-address").text(data.yri.address);
+              $("#cafe-time").text(data.yri.time);
+              $("#cafe-desc").text(data.yri.description);
             }
           });
 
@@ -105,6 +123,12 @@
             lng: 126.925829,
             infoWindow: {
               content: '<p>조커커피</p>'
+            },
+            click: function(e) {
+              $("#cafe-name").text(data.jocker.name);
+              $("#cafe-address").text(data.jocker.address);
+              $("#cafe-time").text(data.jocker.time);
+              $("#cafe-desc").text(data.jocker.description);
             }
           });
 
@@ -113,21 +137,17 @@
             lng: 126.921317,
             infoWindow: {
               content: '<p>aA 디자인 뮤지엄</p>'
+            },
+            click: function(e) {
+              $("#cafe-name").text(data.aa.name);
+              $("#cafe-address").text(data.aa.address);
+              $("#cafe-time").text(data.aa.time);
+              $("#cafe-desc").text(data.aa.description);
             }
           });
         </script>
       </div>
   </main>
-
-    
-
-<footer class="site-footer">
-  <div class="wrapper">
-    footer
-  </div>
-</footer>
-
-
   </body>
 
 </html>
