@@ -6,10 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Your awesome title</title>
+  <title>3O-P</title>
+  <script src="http://maps.google.com/maps/api/js"></script>
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <script src="/assets/js/gmaps.min.js"></script>
+  <script src="/assets/js/cafeData.js"></script>
+  <style type="text/css">
+    #map {
+      width: 100vw;
+      height: 40vh;
+    }
+  </style>
+
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
 
-  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="canonical" href="http://localhost:4000/">
   <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="/feed.xml">
   
@@ -21,9 +35,8 @@
 
     <header class="site-header" role="banner">
 
-  <div class="wrapper">
 
-    <a class="site-title" href="/">3o project</a>
+    <a class="site-title" href="/">&ensp;3o project</a>
 
     <nav class="site-nav">
       <span class="menu-icon">
@@ -35,17 +48,75 @@
       </span>
     </nav>
 
-  </div>
 
 </header>
 
 
   <main class="page-content" aria-label="Content">
-    <div class="wrapper">
       <div class="home">
-        <h1 class="page-heading">지도</h1>
+        <!-- <h1 class="page-heading">지도</h1> -->
+        <div id="map">
+        </div>
+
+        <div id="cafe-detail">
+          <h2 id="cafe-name"></h2>
+          <p id='cafe-address'></p>
+          <p id='cafe-time'></p>
+          <div id='cafe-images'>
+          </div>
+        </div>
+
+        <script>
+          var map = new GMaps({
+            el: '#map',
+            lat: 37.548019,
+            lng: 126.918351
+          });
+
+          map.addMarker({
+            lat: 37.552303,
+            lng: 126.914000,
+            click: function(e) {
+              $("#cafe-name").text(data.belief.name);
+              $("#cafe-address").text(data.belief.address);
+              $("#cafe-time").text(data.belief.time);
+              $("#cafe-images").add("<img src=>");
+            }
+          });
+
+          map.addMarker({
+            lat: 37.546261,
+            lng: 126.914429,
+            infoWindow: {
+              content: '<p>비포그레이</p>'
+            }
+          });
+
+          map.addMarker({
+            lat: 37.545837,
+            lng: 126.921616,
+            infoWindow: {
+              content: '<p>이리카페</p>'
+            }
+          });
+
+          map.addMarker({
+            lat: 37.545495,
+            lng: 126.925829,
+            infoWindow: {
+              content: '<p>조커커피</p>'
+            }
+          });
+
+          map.addMarker({
+            lat: 37.549511,
+            lng: 126.921317,
+            infoWindow: {
+              content: '<p>aA 디자인 뮤지엄</p>'
+            }
+          });
+        </script>
       </div>
-    </div>
   </main>
 
     
