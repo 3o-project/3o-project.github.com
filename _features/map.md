@@ -1,0 +1,5 @@
+---
+id: map
+name: CafeMap
+---
+
